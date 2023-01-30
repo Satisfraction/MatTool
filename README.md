@@ -1,5 +1,5 @@
 # MatTool
-This code provides a search interface for keywords, exceptions and methods.
+This code provides a search interface for keywords, exceptions and methods of Python.
 
 
 Usage Description:

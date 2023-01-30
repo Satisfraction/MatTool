@@ -5,9 +5,9 @@ def load_keywords(file_path):
     with open(file_path, 'r') as f:
         return json.load(f)
 
-keywords = load_keywords('MatTool\ExceptionKeywords.json')
-exceptions = load_keywords('MatTool\ExceptionKeywords.json')
-methods = load_keywords('MatTool\MethodKeywords.json')
+keywords = load_keywords('PythonKeywords.json')
+exceptions = load_keywords('ExceptionKeywords.json')
+methods = load_keywords('MethodKeywords.json')
 
 def search_keywords(keywords, search_term):
     for k in keywords:

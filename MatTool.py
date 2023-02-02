@@ -62,6 +62,8 @@ def list_methods(methods):
 while True:
     # Pause the program for 1.5 seconds
     time.sleep(1.5)
+    # original creator :)
+    print("Made by Satisfraction: https://github.com/Satisfraction")
     # Get the user's input
     user_input = input("Enter a keyword, exception, method (or 'exit' to quit, 'list' to see all keywords): ")
     # If the user inputs "exit", break out of the loop
@@ -92,3 +94,4 @@ while True:
             result = "Invalid category"
         # Print the result of the search
         print("Result:", result)
+

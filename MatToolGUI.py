@@ -1,14 +1,10 @@
 import json
 import tkinter as tk
-from tkinter import messagebox
+
 
 def load_keywords(file_path):
     with open(file_path, 'r') as f:
         return json.load(f)
-
-keywords = load_keywords('PythonKeywords.json')
-exceptions = load_keywords('ExceptionKeywords.json')
-methods = load_keywords('MethodKeywords.json')
 
 def search_keywords(keywords, search_term):
     for k in keywords:
@@ -37,17 +33,22 @@ def list_exceptions(exceptions):
 def list_methods(methods):
     return [m["method"] for m in methods]
 
+
 class KeywordSearchApp(tk.Tk):
-    
+
     def __init__(self):
         super().__init__()
 
         self.title("MatTool for Python Keyword's")
-        self.geometry("600x600")
+        self.geometry("500x500")
 
         tk.Label(self, text="Enter a keyword, exception, method").pack()
         self.entry = tk.Entry(self)
         self.entry.pack()
+        
+        self.keywords = load_keywords('python_keywords.json')
+        self.exceptions = load_keywords('exception_keywords.json')
+        self.methods = load_keywords('method_keywords.json')
 
         tk.Label(self, text="Which category would you like to search in?").pack()
         self.category = tk.StringVar()
@@ -60,44 +61,47 @@ class KeywordSearchApp(tk.Tk):
         self.result_label = tk.Text(self)
         self.result_label.pack()
 
-    def search(self):
-        user_input = self.entry.get()
-        category = self.category.get()
+        def search(self):
+            user_input = self.entry.get()
+            category = self.category.get()
+            search_functions = {
+                "keywords": search_keywords,
+                "exceptions": search_exceptions,
+                "methods": search_methods
+            }
+            result = search_functions.get(category, lambda x, y: "Invalid category")(eval(category), user_input)
 
-        if category == "Keywords":
-            result = search_keywords(keywords, user_input)
-        elif category == "Exceptions":
-            result = search_exceptions(exceptions, user_input)
-        elif category == "Methods":
-            result = search_methods(methods, user_input)
-        else:
-            result = "Invalid category"
+            self.result_label.delete(1.0, tk.END)
+            self.result_label.insert(tk.END, result)
 
-        self.result_label.delete(1.0, tk.END)
-        self.result_label.insert(tk.END, result)
+        keywords_data = load_keywords('python_keywords.json' and 'exception_keywords.json' and 'method_keywords.json')
+        #print(keywords_data)
 
+        def list_keywords(keywords_data):
+            return [k["key"] for k in keywords_data]
+        
+        def list_exceptions(exceptions):
+            return [e["exception"] for e in exceptions]
 
-        self.result_label.config(text=result)
+        def list_methods(methods):
+            return [m["method"] for m in methods]
 
-    def list_keywords(self):
-        category = self.category.get()
-        if category == "Keywords":
-            result = "\n".join(list_keywords(keywords))
-        elif category == "Exceptions":
-            result = "\n".join(list_exceptions(exceptions))
-        elif category == "Methods":
-            result = "\n".join(list_methods(methods))
-        else:
-            result = "Invalid category"
+        def list_keywords(self):
+            category = self.category.get()
+            result_text = ""
+            if category == "Keywords":
+                result_text = "\n".join(list_keywords(self.keywords))
+            elif category == "Exceptions":
+                result_text = "\n".join(list_exceptions(self.exceptions))
+            elif category == "Methods":
+                result_text = "\n".join(list_methods(self.methods))
+            else:
+                result_text = "Invalid category"
 
-        self.result_label.delete(1.0, tk.END)
-        self.result_label.insert(tk.END, result)
-
-
-        self.result_label.config(text=result)
+            self.result_label.delete(1.0, tk.END)
+            self.result_label.insert(tk.END, result_text)
 
 
-
-app = KeywordSearchApp()
-app.mainloop()
-
+if __name__ == "__main__":       
+    app = KeywordSearchApp()
+    app.mainloop()

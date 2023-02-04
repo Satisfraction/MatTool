@@ -9,9 +9,9 @@ def load_keywords(file_path):
         return json.load(f)
 
 # Load the keyword, exception, and method keyword files
-keywords = load_keywords('PythonKeywords.json')
-exceptions = load_keywords('ExceptionKeywords.json')
-methods = load_keywords('MethodKeywords.json')
+keywords = load_keywords('python_keywords.json')
+exceptions = load_keywords('exception_keywords.json')
+methods = load_keywords('method_keywords.json')
 
 # Search for a keyword in the keyword list
 def search_keywords(keywords, search_term):
@@ -62,12 +62,14 @@ def list_methods(methods):
 while True:
     # Pause the program for 1.5 seconds
     time.sleep(1.5)
-    # original creator :)
-    print("Made by Satisfraction: https://github.com/Satisfraction")
     # Get the user's input
     user_input = input("Enter a keyword, exception, method (or 'exit' to quit, 'list' to see all keywords): ")
     # If the user inputs "exit", break out of the loop
     if user_input.lower() == "exit":
+        # original creator :)
+        print("Made by Satisfraction: https://github.com/Satisfraction")
+        print("Thanks for using!")
+        time.sleep(2)
         break
     # If the user inputs "list", print a list of all keywords, exceptions, and methods
     elif user_input == "list":

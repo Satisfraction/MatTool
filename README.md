@@ -12,9 +12,9 @@ The code will continue to prompt the user for input until the user enters 'exit'
 
 Alphatest version of a GUI with kivy is now avaible.
 
-needs kivy to work!
+Needs kivy to work!
 
-to install kivy use:
+To install kivy use:
 'pip install kivy'
 
 

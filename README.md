@@ -12,6 +12,7 @@ The code will continue to prompt the user for input until the user enters 'exit'
 
 ------------------------------------------------------
 Alphatest version of a GUI with kivy is now avaible.
+(Only the 'Search' function is working yet. Means you can not list all the "keywords" from the 3 .json files!)
 
 Needs kivy to work!
 

@@ -10,7 +10,13 @@ The user is prompted to enter a keyword, exception, method or 'list' to see all 
 
 The code will continue to prompt the user for input until the user enters 'exit'.
 
-NO working GUI yet!!
+Alphatest version of a GUI with kivy is now avaible.
+
+needs kivy to work!
+
+to install kivy use:
+'pip install kivy'
+
 
 
 Disclaimer:

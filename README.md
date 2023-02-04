@@ -10,6 +10,7 @@ The user is prompted to enter a keyword, exception, method or 'list' to see all 
 
 The code will continue to prompt the user for input until the user enters 'exit'.
 
+------------------------------------------------------
 Alphatest version of a GUI with kivy is now avaible.
 
 Needs kivy to work!
@@ -17,7 +18,7 @@ Needs kivy to work!
 To install kivy use:
 'pip install kivy'
 
-
+------------------------------------------------------
 
 Disclaimer:
 All files used to fill the JSON files were sourced from the link at "https://www.w3schools.com/python/python_ref_keywords.asp".

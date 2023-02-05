@@ -2,7 +2,7 @@
 This code provides a search interface for keywords, exceptions and methods of Python.
 
 
-Usage Description:
+Usage Description (CLI):
 
 This code is a tool that allows the user to search for keywords, exceptions, and methods in JSON files. The code first loads the keywords, exceptions, and methods data from the specified JSON files.
 
@@ -16,7 +16,7 @@ Alphatest version of a GUI with kivy is now avaible.
 
 Needs kivy to work!
 
-To install kivy use:
+To install Kivy use:
 'pip install kivy'
 
 ------------------------------------------------------
